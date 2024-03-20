@@ -8,6 +8,7 @@ links=("chromium --app=https://chat.openai.com"
        "chromium --app=https://docs.google.com/spreadsheets/"
        "chromium --app=https://youtube.com"
        "chromium --app=https://translate.google.com"
+       "chromium --app=https://github.com/"
       )
 
 # Use Rofi to display the links and get user input
