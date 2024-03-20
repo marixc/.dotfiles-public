@@ -1,0 +1,61 @@
+#!/bin/bash
+
+MAGIC_DIR=~/.local/share/zmagic
+Z_DATABASE_FILE=$MAGIC_DIR/z_data
+
+# Function to update the database with the current directory
+update_z_database() {
+    # Get the current directory
+    current_dir=$(pwd)
+
+    # Check if the jumper directory exists, if not, create it
+    [ -d "$MAGIC_DIR" ] || mkdir -p "$MAGIC_DIR"
+
+    # Check if the database file exists
+    if [ -f "$Z_DATABASE_FILE" ]; then
+        # Check if the directory is already in the database
+        if grep -q "^$current_dir" "$Z_DATABASE_FILE"; then
+            # If it exists, do nothing
+            :
+        else
+            # If it doesn't exist, add it to the database with a score of 1
+            echo "$current_dir" >> "$Z_DATABASE_FILE"
+        fi
+    else
+        # If the database doesn't exist, create it with the current directory and score 1
+        echo "$current_dir" > "$Z_DATABASE_FILE"
+    fi
+}
+
+# Function to perform directory navigation using the database
+z() {
+    # If no argument is provided, list the directories in the database
+    if [ -z "$1" ]; then
+        cat "$Z_DATABASE_FILE" | column -t
+        return
+    fi
+
+    # Search for the directory in the database
+    match=$(grep "$1" "$Z_DATABASE_FILE" | head -n 1)
+
+    # If a match is found, extract the directory and navigate to it
+    if [ -n "$match" ]; then
+        directory="$match"
+        cd "$directory" || return
+    else
+        echo "No matching directory found."
+    fi
+}
+
+# Hook into the "cd" command to automatically update the database
+cd() {
+    builtin cd "$@" && update_z_database
+}
+
+# Initialize the database when the script is sourced or executed
+if [ -z "$ZSCRIPT_INITIALIZED" ]; then
+    update_z_database
+    export ZSCRIPT_INITIALIZED=1
+fi
+
+

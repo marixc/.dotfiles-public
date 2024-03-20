@@ -1,0 +1,35 @@
+#!/bin/bash
+
+options=$(echo -e "external\ninternal\ndual\nduplicate9\nduplicate10")
+
+selected_option=$(echo -e "$options" | rofi -dmenu -i -mesg "Ch. Display" -config ~/.config/rofi/scripts/config/display.rasi)
+
+# Handle the selected option
+case $selected_option in
+    "external")
+        xrandr --output HDMI1 --auto --primary --output LVDS1 --off
+            ~/.fehbg &
+            notify-send "Display Configuration" "Changed to external"
+        ;;
+    "internal")
+        xrandr --output LVDS1 --auto --primary --output HDMI1 --off
+            ~/.fehbg &
+            notify-send "Display Configuration" "Changed to internal"
+        ;;
+    "dual")
+        xrandr --output LVDS1 --auto --output HDMI1 --auto --right-of LVDS1
+            ~/.fehbg &
+            notify-send "Display Configuration" "Changed to dual"
+        ;;
+    "duplicate9")
+        xrandr --output LVDS1 --mode 1600x900 --output HDMI1 --mode 1600x900 --same-as LVDS1
+            ~/.fehbg &
+            notify-send "Display Configuration" "Changed to duplicate9"
+        ;;
+    "duplicate10")
+        xrandr --output LVDS1 --mode 1600x900 --output HDMI1 --mode 1920x1080 --same-as LVDS1
+            ~/.fehbg &
+            notify-send "Display Configuration" "Changed to duplicate10"
+        ;;
+esac
+

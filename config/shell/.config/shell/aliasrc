@@ -1,0 +1,38 @@
+# system
+alias ls="ls --color=auto"
+alias ll='exa -l -g --icons'
+alias lla='exa -l -g -a --icons'
+alias llt='exa --tree'
+alias llat='exa -a --tree'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias audio="pactl info | grep 'Server Name'"
+
+#custom
+alias py='python'
+alias dot='cd ~/.dotfiles-public/'
+alias sd="cd ~ && cd (find * -type d | fzf)"
+
+# git
+alias g="git"
+alias ga="git add"
+alias gf="git fetch"
+alias gst="git status"
+alias gco="git checkout"
+alias gcm="git commit"
+alias gdf="git diff"
+alias gps="git push"
+alias gpl="git pull --rebase"
+
+# apps
+alias v='nvim'
+alias c='code'
+alias tx='tmux'
+alias tms="tmux-sessionizer"
+alias txa="tmux attach"
+alias ide="ide-like-tmux"
+alias redr='redshift -l 55.7:12.6 -t 2000:2000 &'
+alias redgtk='redshift-gtk -l 55.7:12.6 -t 2000:2000 &'
+alias zat="zathura"
+alias juap="jupyterlab_app"
+alias juend="killall jupyter-lab"

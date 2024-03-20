@@ -1,0 +1,31 @@
+#!/bin/bash
+
+options=$(echo -e "⏻  Poweroff\n  Restart\n  Suspend\n  Logout")
+
+selected_option=$(echo -e "$options" | rofi -dmenu -i -mesg "Bye, "$USER"!" -config ~/.config/rofi/scripts/config/power.rasi)
+
+# Handle the selected option
+case $selected_option in
+    "⏻  Poweroff")
+        confirm=$(echo -e "Yes\nNo" | rofi -dmenu -i -mesg "Poweroff?" -config ~/.config/rofi/scripts/config/power.rasi)
+        if [ "$confirm" == "Yes" ]; then
+            systemctl poweroff
+        fi
+        ;;
+    "  Restart")
+        confirm=$(echo -e "Yes\nNo" | rofi -dmenu -i -mesg "Restart?" -config ~/.config/rofi/scripts/config/power.rasi)
+        if [ "$confirm" == "Yes" ]; then
+            systemctl reboot
+        fi
+        ;;
+    "  Suspend")
+        systemctl suspend
+        ;;
+    "  Logout")
+        confirm=$(echo -e "Yes\nNo" | rofi -dmenu -i -mesg "Logout?" -config ~/.config/rofi/scripts/config/power.rasi)
+        if [ "$confirm" == "Yes" ]; then
+            pkill -KILL -u "$USER"
+        fi
+        ;;
+esac
+

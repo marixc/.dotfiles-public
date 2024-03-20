@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Define your list of links
+links=("chromium --app=https://chat.openai.com"
+       "chromium --app=https://notion.so"
+       "chromium --app=https://calendar.google.com"
+       "chromium --app=https://docs.google.com/document/"
+       "chromium --app=https://docs.google.com/spreadsheets/"
+       "chromium --app=https://youtube.com"
+       "chromium --app=https://translate.google.com"
+      )
+
+# Use Rofi to display the links and get user input
+selected_link=$(printf "%s\n" "${links[@]}" | rofi -dmenu -i -p "Select a link:")
+
+# Check if a link was selected
+if [[ -n $selected_link ]]; then
+    # Open the selected link
+    eval "$selected_link"
+fi
+

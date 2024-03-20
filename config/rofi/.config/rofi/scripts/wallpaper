@@ -1,0 +1,8 @@
+#!/bin/bash
+
+wallpapers_dir=$HOME/Pictures/my-wallpapers/
+selected=$(ls "$wallpapers_dir" | rofi -dmenu -i -mesg "Select Wallpaper")
+
+if [ -n "$selected" ]; then
+    feh --bg-scale "$wallpapers_dir/$selected"
+fi
