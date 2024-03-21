@@ -23,6 +23,7 @@ alias gcm="git commit"
 alias gdf="git diff"
 alias gps="git push"
 alias gpl="git pull --rebase"
+alias gpo="git push -u origin"
 
 # apps
 alias v='nvim'
