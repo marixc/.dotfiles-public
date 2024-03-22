@@ -7,7 +7,15 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "isort", "black" },
-					javascript = { { "prettierd", "prettier" } },
+					javascript = { "prettier" },
+					typescript = { "prettier" },
+					javascriptreact = { "prettier" },
+					typescriptreact = { "prettier" },
+					css = { "prettier" },
+					html = { "prettier" },
+					json = { "prettier" },
+					jsonc = { "prettier" },
+					yaml = { "prettier" },
 				},
 				format_on_save = function(bufnr)
 					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
