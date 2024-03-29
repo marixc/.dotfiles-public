@@ -28,3 +28,19 @@ vim.opt.colorcolumn = "80"
 vim.opt.pumblend = 8
 
 vim.g.mapleader = " "
+
+-- lang. setup
+vim.opt.spelllang = "en_us,de_de"
+vim.opt.spell = true
+
+vim.api.nvim_create_user_command("SpellEnable", function()
+	vim.opt.spell = true
+end, {
+	desc = "SpellEnable",
+})
+
+vim.api.nvim_create_user_command("SpellDisable", function()
+	vim.opt.spell = false
+end, {
+	desc = "SpellDisable",
+})
