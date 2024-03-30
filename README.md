@@ -68,7 +68,7 @@ highlight your todo comments in different styles
 - [undotree](https://github.com/mbbill/undotree)
 makes it easy to browse and switch between different undo branches
 - [harpoon](https://github.com/ThePrimeagen/harpoon)
-switch between easily files by marking them
+switch easily between files by marking them
 - [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) 
 distraction-free coding, by hiding UI parts and centering text
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
