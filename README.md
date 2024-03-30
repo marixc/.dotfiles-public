@@ -4,11 +4,19 @@
 
 ## Table of Content
 
-1. [Qtile](#qtile)
+1. [Overview](#overview)
 2. [Neovim](#neovim)
 
-## [Qtile](./config/qtile/.config/qtile/)
-🌠 Future Outlook
+## Things I Use <a name="overview"></a>
+| App   | In Use    |
+|--------------- | --------------- |
+| OS   | Linux (Arch)   |
+| WM   | Qtile   |
+| Terminal   | Kitty   |
+| Text Editor   | Neovim   |
+| Shell   | Fish   |
+| PDF Reader   |  Zathura  |
+
 
 ## [Neovim](./config/nvim/.config/nvim/)  setup <a name="neovim"></a>
 My Plugin manager of choice is [lazy.nvim](https://github.com/folke/lazy.nvim).
