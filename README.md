@@ -60,6 +60,8 @@ autopair for multiple characters
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 use treesitter to autoclose and autorename html tag
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) commenting plugin
+- [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+comment based on the cursor location in the file (jsx, tsx, etc.)
 
 
 #### Editor
