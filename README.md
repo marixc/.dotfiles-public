@@ -1,25 +1,34 @@
-<h1 align=center>Personal Dotfiles</h1>
+<div align="center">
 
-> My dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/).
+# Personal Dotfiles
+<a href="https://docs.qtile.org"> ![Static Badge](https://img.shields.io/badge/QTILE-blue?style=for-the-badge) </a>
+<a href="https://sw.kovidgoyal.net/kitty/"> ![Static Badge](https://img.shields.io/badge/KITTY-gray?style=for-the-badge)
+<a href="https://github.com/tmux/tmux/wiki"> ![Static Badge](https://img.shields.io/badge/tmux-%2325C2A0?style=for-the-badge)</a>
+<a href="https://neovim.io"> ![Static Badge](https://img.shields.io/badge/NEOVIM-%235FD700?style=for-the-badge)</a>
+<p><sup style="color: #90EE90;">My dotfiles are managed by <a href="https://www.gnu.org/software/stow/"> 🐂GNU Stow</a> </sup></p>
+
+</div>
+
 
 ## Table of Content
 
 1. [Overview](#overview)
 2. [Neovim](#neovim)
 
-## Things I Use <a name="overview"></a>
+## Overview <a name="overview"></a>
 | Things I   | Use    |
 |--------------- | --------------- |
-| **OS**   | Linux (Arch)   |
+| **OS**   | Linux ([Arch](https://archlinux.org/) )   |
 | **WM**   | [Qtile](./config/qtile/.config/qtile/)   |
 | **Terminal**   | [ Kitty ](./config/kitty/.config/kitty/kitty.conf)   |
 | **Text Editor**   | [ Neovim ](./config/nvim/.config/nvim/)   |
 | **Shell**   | [ Fish ](./config/fish/.config/fish/)   |
 | **PDF Reader**   |  [ Zathura ](./config/zathura/.config/zathura/zathurarc)  |
+| **App Launcher**   |  [ Rofi ](https://github.com/davatorium/rofi)  |
 
 
-## [Neovim](./config/nvim/.config/nvim/)  setup <a name="neovim"></a>
-My Plugin manager of choice is [lazy.nvim](https://github.com/folke/lazy.nvim).
+## Neovim setup <a name="neovim"></a>
+My *Plugin Manager* of choice is [lazy.nvim](https://github.com/folke/lazy.nvim).
 ### 📦 Plugins
 #### UI
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) for nicer tabs
