@@ -83,6 +83,8 @@ switch easily between files by marking them
 preview Markdown files in the browser with synchronised scrolling
 - [mini.surround](https://github.com/echasnovski/mini.surround)
 add, delete, replace, find, highlight surrounding
+- [mini.hipatterns](https://github.com/echasnovski/mini.hipatterns) 
+highlight patterns in text, mainly hex color strings
 - [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) file explorer
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 provides a simple and easy way to use the interface for tree-sitter
