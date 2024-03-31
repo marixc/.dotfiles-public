@@ -1,4 +1,4 @@
-<h1 align=center>🧑‍💻️ Personal Dotfiles</h1>
+<h1 align=center>Personal Dotfiles</h1>
 
 > My dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
