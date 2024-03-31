@@ -81,6 +81,8 @@ switch easily between files by marking them
 distraction-free coding, by hiding UI parts and centering text
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 provides a simple and easy way to use the interface for tree-sitter
+- [mini.surround](https://github.com/echasnovski/mini.surround)
+add, delete, replace, find, highlight surrounding
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 toggle terminal
 - [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
