@@ -24,7 +24,7 @@
 | **Text Editor**   | [ Neovim ](./config/nvim/.config/nvim/)   |
 | **Shell**   | [ Fish ](./config/fish/.config/fish/)   |
 | **PDF Reader**   |  [ Zathura ](./config/zathura/.config/zathura/zathurarc)  |
-| **App Launcher**   |  [ Rofi ](https://github.com/davatorium/rofi)  |
+| **App Launcher**   |  [ Rofi ](./config/rofi/.config/rofi/)  |
 
 
 ## Neovim setup <a name="neovim"></a>
