@@ -4,6 +4,6 @@ if status is-interactive
     source $HOME/.config/shell/aliasrc
     bind \cf "tmux-sessionizer"
     bind \cg "tmux-sessionizer-max"
-    bind \ch "project-switch"
+    bind \ct "project-switch"
 
 end

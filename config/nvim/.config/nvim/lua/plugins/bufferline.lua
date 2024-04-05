@@ -17,8 +17,8 @@ return {
 				},
 			})
 			-- Define key mappings using Vimscript
-			vim.cmd("nnoremap <C-j> :BufferLineCycleNext<CR>")
-			vim.cmd("nnoremap <C-k> :BufferLineCyclePrev<CR>")
+			vim.keymap.set("", "sbn", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+			vim.keymap.set("", "sbp", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 		end,
 	},
 }

@@ -2,7 +2,7 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-        "hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		-- luasnip
 		"L3MON4D3/LuaSnip", -- snippet engine
@@ -17,11 +17,11 @@ return {
 		local lspkind = require("lspkind")
 		require("luasnip.loaders.from_vscode").lazy_load()
 
-        -- luasnip keymap for jumping between the snippet gaps
-		vim.keymap.set({ "i", "s" }, "<C-L>", function()
+		-- luasnip keymap for jumping between the snippet gaps
+		vim.keymap.set({ "i", "s" }, "<C-f>", function()
 			luasnip.jump(1)
 		end, { silent = true })
-		vim.keymap.set({ "i", "s" }, "<C-H>", function()
+		vim.keymap.set({ "i", "s" }, "<C-b>", function()
 			luasnip.jump(-1)
 		end, { silent = true })
 
@@ -55,7 +55,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
-                { name = "buffer" },
+				{ name = "buffer" },
 			}),
 
 			formatting = {
