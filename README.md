@@ -103,7 +103,7 @@ highlights other instances of the word the your cursor
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 optimizes Git to its fullest potential
 - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
-Move easily between neovim and tmux panes
+move easily between neovim and tmux panes
 - [vimtex](https://github.com/lervag/vimtex) lets you work nicely with LaTeX
 - [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) 
 distraction-free coding, by hiding UI parts and centering text
