@@ -4,8 +4,10 @@ alias ll='exa -l -g --icons'
 alias lla='exa -l -g -a --icons'
 alias llt='exa --tree'
 alias llat='exa -a --tree'
+alias c="clear"
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias audio="pactl info | grep 'Server Name'"
 
 #custom
@@ -27,7 +29,7 @@ alias gpo="git push -u origin"
 
 # apps
 alias v='nvim'
-alias c='code'
+alias co='code'
 alias tx='tmux'
 alias tms="tmux-sessionizer"
 alias txa="tmux attach"
