@@ -6,6 +6,7 @@ mod = "mod1"  # mod4 -> supper
 
 apps = {
     "myLauncher": "rofi -show drun",
+    "myEmacs": "emacsclient -c -a 'emacs' ",
     "myFileBrowser": "nemo",
     "myBrowser": "firefox",
     "myPowerMenu": "sh -c ~/.config/rofi/scripts/power",
@@ -80,13 +81,18 @@ keys = [
         lazy.spawn(apps.get("myLauncher")),
         desc="Launches Rofi"
         ),
+    Key([mod],
+        "d",
+        lazy.spawn(apps.get("myEmacs")),
+        desc="Launches Emacs"
+        ),
     Key([mod, "control"],
         "p",
         lazy.spawn(apps.get("myWallpaper")),
         desc="Launches Rofi Wallpaper"
         ),
     Key([mod],
-        "x",
+        "i",
         lazy.spawn(apps.get("myApps")),
         desc="Launches my Apps"
         ),
@@ -115,7 +121,7 @@ keys = [
         lazy.spawn(apps.get("myPowerMenu")),
         desc="Launches rofi-power-menu",
     ),
-    Key([mod],
+    Key([mod, "control"],
         "d",
         lazy.spawn(apps.get("myDisplay")),
         desc="Launches rofi-power-menu"
