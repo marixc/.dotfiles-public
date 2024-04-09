@@ -1,6 +1,9 @@
 autoload -U colors && colors
 PS1="%B%{$fg[blue]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[blue]%}]%{$reset_color%}%b"
 
+
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
 # History
 HISTSIZE=10000000
 SAVEHIST=10000000
