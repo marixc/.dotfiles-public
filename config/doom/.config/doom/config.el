@@ -122,3 +122,18 @@
 (setq select-enable-clipboard nil)
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
+
+;; select
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
+;; lsp
+(defun my-lsp-list-references ()
+  "List references using LSP."
+  (interactive)
+  (cond
+   ((derived-mode-p 'python-mode) (lsp-find-references))
+   ((derived-mode-p 'js-mode) (lsp-find-references))
+   ;; Add more major modes and their respective LSP commands here
+   (t (message "No LSP references command available for this mode"))))
+
+(map! :nv "SPC rr" #'my-lsp-list-references)
