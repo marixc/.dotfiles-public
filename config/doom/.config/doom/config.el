@@ -129,6 +129,14 @@
 ;; custom keyb.
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 
+(defun my/run-zsh-term ()
+  "Run /bin/zsh in ansi-term."
+  (interactive)
+  (ansi-term "/bin/zsh"))
+
+(map! :leader
+      "t t" #'my/run-zsh-term)
+
 
 
 ;; lsp
