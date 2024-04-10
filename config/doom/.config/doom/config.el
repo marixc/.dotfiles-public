@@ -111,5 +111,9 @@
  '(org-level-6 ((t (:inherit outline-5 :height 1.2))))
  '(org-level-7 ((t (:inherit outline-5 :height 1.1)))))
 
+;; hide bold etc. markers
+(setq org-hide-emphasis-markers t)
+
+
 ;; pdf
 (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
