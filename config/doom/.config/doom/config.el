@@ -126,6 +126,11 @@
 ;; select
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
+;; custom keyb.
+(map! :leader "wv" #'+evil/window-vsplit-and-follow)
+
+
+
 ;; lsp
 (defun my-lsp-list-references ()
   "List references using LSP."
