@@ -129,6 +129,7 @@
 ;; custom keyb.
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 
+;; terminal
 (defun my/run-zsh-term ()
   "Run /bin/zsh in ansi-term."
   (interactive)
