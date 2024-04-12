@@ -1,3 +1,30 @@
+#+TITLE: Doom Emacs Config
+#+DESCRIPTION: Literate config file for DOOM Emacs
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+
+* Table of Contents :toc:
+- [[#doom-info][Doom Info]]
+  - [[#general][General]]
+  - [[#packages][Packages]]
+- [[#ui][UI]]
+  - [[#font][Font]]
+  - [[#theme][Theme]]
+- [[#editor][Editor]]
+  - [[#linenumbers][Linenumbers]]
+  - [[#clipboard][Clipboard]]
+  - [[#keymaps][Keymaps]]
+- [[#org][Org]]
+- [[#pdf][Pdf]]
+- [[#terminal][Terminal]]
+- [[#code][Code]]
+  - [[#keymaps-1][Keymaps]]
+  - [[#lang][Lang.]]
+
+* Doom Info
+** General
+#+begin_src emacs-lisp 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -9,6 +36,9 @@
 ;; (setq user-full-name "John Doe"
 ;;       user-mail-address "john@doe.com")
 
+#+end_src
+** Packages
+#+begin_src emacs-lisp
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -40,7 +70,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+#+end_src
 
+* UI
+** Font
+#+begin_src emacs-lisp
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -82,25 +116,36 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-
+#+end_src
+** Theme
+#+begin_src emacs-lisp
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
-
+#+end_src
+* Editor
+** Linenumbers
+#+begin_src emacs-lisp
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
-
+#+end_src
+** Clipboard
+#+begin_src emacs-lisp
 (setq select-enable-clipboard nil)
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
-
+#+end_src
+** Keymaps
+#+begin_src emacs-lisp
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 
 ;; select
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-
+#+end_src
+* Org
+#+begin_src emacs-lisp
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -121,10 +166,18 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+#+end_src
+* Pdf
+#+begin_src emacs-lisp
 (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
-
+#+end_src
+* Terminal
+#+begin_src emacs-lisp
 (setq vterm-shell "/usr/bin/zsh")
-
+#+end_src
+* Code
+** Keymaps
+#+begin_src emacs-lisp
 (defun my-lsp-list-references ()
   "List references using LSP."
   (interactive)
@@ -135,5 +188,10 @@
    (t (message "No LSP references command available for this mode"))))
 
 (map! :nv "SPC rr" #'my-lsp-list-references)
+#+end_src
 
+** Lang.
+*** Python
+#+begin_src emacs-lisp
 (setq python-shell-interpreter "~/env/venv-emacs/bin/python")
+#+end_src
