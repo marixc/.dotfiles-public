@@ -134,7 +134,18 @@
 ;; select all
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
+;; windows
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
+(map! :n "gv" #'+evil/window-vsplit-and-follow)
+(map! :n "gs" #'+evil/window-split-and-follow)
+(map! :n "gh" #'evil-window-left)
+(map! :n "gj" #'evil-window-down)
+(map! :n "gk" #'evil-window-up)
+(map! :n "gl" #'evil-window-right)
+
+;; buffers
+(map! :n "g[" #'previous-buffer)
+(map! :n "g]" #'next-buffer)
 
 ;;workspaces
 (map! :leader
