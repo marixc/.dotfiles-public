@@ -135,8 +135,15 @@
   (interactive)
   (ansi-term "/bin/zsh"))
 
+;; terminal
 (map! :leader
       "t t" #'my/run-zsh-term)
+
+(setq vterm-shell "/usr/bin/zsh")
+
+
+;;code
+(setq python-shell-interpreter "~/env/venv-emacs/bin/python")
 
 
 
