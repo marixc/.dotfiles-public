@@ -128,6 +128,9 @@
 (map! :map treemacs-mode-map
       [mouse-1] #'treemacs-single-click-expand-action)
 
+;; toggle treemacs
+(map! :nvmi "C-e" '+treemacs/toggle)
+
 (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
 
 (setq vterm-shell "/usr/bin/zsh")

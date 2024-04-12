@@ -187,6 +187,9 @@ in the main workspace.
 #+begin_src emacs-lisp
 (map! :map treemacs-mode-map
       [mouse-1] #'treemacs-single-click-expand-action)
+
+;; toggle treemacs
+(map! :nvmi "C-e" '+treemacs/toggle)
 #+end_src
 
 *** Pdf-Tools
