@@ -88,6 +88,9 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 
+(map! :map treemacs-mode-map
+      [mouse-1] #'treemacs-single-click-expand-action)
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
