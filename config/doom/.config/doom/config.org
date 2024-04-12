@@ -5,25 +5,21 @@
 
 
 * Table of Contents :toc:
-- [[#doom-info][Doom Info]]
+- [[#doom-template][Doom Template]]
   - [[#general][General]]
   - [[#packages][Packages]]
 - [[#ui][UI]]
   - [[#font][Font]]
   - [[#theme][Theme]]
-- [[#plugins][Plugins]]
 - [[#editor][Editor]]
-  - [[#linenumbers][Linenumbers]]
-  - [[#clipboard][Clipboard]]
-  - [[#keymaps][Keymaps]]
-- [[#org][Org]]
-- [[#pdf][Pdf]]
-- [[#terminal][Terminal]]
+  - [[#base][Base]]
+  - [[#org][Org]]
+  - [[#extras][Extras]]
 - [[#code][Code]]
-  - [[#keymaps-1][Keymaps]]
-  - [[#lang][Lang.]]
+  - [[#keymaps][Keymaps]]
+  - [[#language-specific][Language Specific]]
 
-* Doom Info
+* Doom Template
 ** General
 #+begin_src emacs-lisp 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
@@ -38,6 +34,7 @@
 ;;       user-mail-address "john@doe.com")
 
 #+end_src
+
 ** Packages
 #+begin_src emacs-lisp
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -86,26 +83,14 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 
-(set-face-attribute 'default nil
-  :font "JetBrains Mono"
-  :height 110
-  :weight 'medium)
-(set-face-attribute 'variable-pitch nil
-  :font "JetBrains Mono"
-  :height 120
-  :weight 'medium)
-(set-face-attribute 'fixed-pitch nil
-  :font "JetBrains Mono"
-  :height 110
-  :weight 'medium)
-;; Makes commented text and keywords italics.
-;; This is working in emacsclient but not emacs.
-;; Your font must have an italic face available.
-(set-face-attribute 'font-lock-comment-face nil
-  :slant 'italic)
-(set-face-attribute 'font-lock-keyword-face nil
-  :slant 'italic)
+(setq
+ doom-font (font-spec :family "JetBrains Mono" :size 15)
+ doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 15)
+ doom-big-font (font-spec :family "JetBrains Mono" :size 24))
 
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
@@ -118,6 +103,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 #+end_src
+
 ** Theme
 #+begin_src emacs-lisp
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -125,32 +111,54 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 #+end_src
-* Plugins
-#+begin_src emacs-lisp
-(map! :map treemacs-mode-map
-      [mouse-1] #'treemacs-single-click-expand-action)
-#+end_src
+
+
 * Editor
-** Linenumbers
+** Base
+*** Linenumbers
 #+begin_src emacs-lisp
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 #+end_src
-** Clipboard
+
+*** Clipboard
 #+begin_src emacs-lisp
 (setq select-enable-clipboard nil)
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
 #+end_src
-** Keymaps
+
+*** Keymaps
 #+begin_src emacs-lisp
+;; select all
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 
-;; select
-(global-set-key (kbd "C-a") 'mark-whole-buffer)
+;;workspaces
+(map! :leader
+      "1" #'+workspace/switch-to-0
+      "2" #'+workspace/switch-to-1
+      "3" #'+workspace/switch-to-2
+      "5" #'+workspace/switch-to-3
+      "6" #'+workspace/switch-to-4
+      "7" #'+workspace/switch-to-5
+      "8" #'+workspace/switch-to-6
+      "9" #'+workspace/switch-to-7
+      )
 #+end_src
-* Org
+
+*** Fix Client
+If you start a new client a ni *new* workspace will be created evey time. This code prevents that and instead is opening up emacs
+in the main workspace.
+#+begin_src emacs-lisp
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main")
+  )
+#+end_src
+
+** Org
 #+begin_src emacs-lisp
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -173,17 +181,28 @@
 (setq org-directory "~/org/")
 
 #+end_src
-* Pdf
+
+** Extras
+*** Treemacs
+#+begin_src emacs-lisp
+(map! :map treemacs-mode-map
+      [mouse-1] #'treemacs-single-click-expand-action)
+#+end_src
+
+*** Pdf-Tools
 #+begin_src emacs-lisp
 (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
 #+end_src
-* Terminal
+
+*** V-Term
 #+begin_src emacs-lisp
 (setq vterm-shell "/usr/bin/zsh")
 #+end_src
+
 * Code
 ** Keymaps
 #+begin_src emacs-lisp
+;; for lsp refferences
 (defun my-lsp-list-references ()
   "List references using LSP."
   (interactive)
@@ -196,7 +215,7 @@
 (map! :nv "SPC rr" #'my-lsp-list-references)
 #+end_src
 
-** Lang.
+** Language Specific
 *** Python
 #+begin_src emacs-lisp
 (setq python-shell-interpreter "~/env/venv-emacs/bin/python")

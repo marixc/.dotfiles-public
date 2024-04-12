@@ -51,26 +51,14 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 
-(set-face-attribute 'default nil
-  :font "JetBrains Mono"
-  :height 110
-  :weight 'medium)
-(set-face-attribute 'variable-pitch nil
-  :font "JetBrains Mono"
-  :height 120
-  :weight 'medium)
-(set-face-attribute 'fixed-pitch nil
-  :font "JetBrains Mono"
-  :height 110
-  :weight 'medium)
-;; Makes commented text and keywords italics.
-;; This is working in emacsclient but not emacs.
-;; Your font must have an italic face available.
-(set-face-attribute 'font-lock-comment-face nil
-  :slant 'italic)
-(set-face-attribute 'font-lock-keyword-face nil
-  :slant 'italic)
+(setq
+ doom-font (font-spec :family "JetBrains Mono" :size 15)
+ doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 15)
+ doom-big-font (font-spec :family "JetBrains Mono" :size 24))
 
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
@@ -88,9 +76,6 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 
-(map! :map treemacs-mode-map
-      [mouse-1] #'treemacs-single-click-expand-action)
-
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -99,10 +84,26 @@
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
 
+;; select all
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 
-;; select
-(global-set-key (kbd "C-a") 'mark-whole-buffer)
+;;workspaces
+(map! :leader
+      "1" #'+workspace/switch-to-0
+      "2" #'+workspace/switch-to-1
+      "3" #'+workspace/switch-to-2
+      "5" #'+workspace/switch-to-3
+      "6" #'+workspace/switch-to-4
+      "7" #'+workspace/switch-to-5
+      "8" #'+workspace/switch-to-6
+      "9" #'+workspace/switch-to-7
+      )
+
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main")
+  )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -124,10 +125,14 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+(map! :map treemacs-mode-map
+      [mouse-1] #'treemacs-single-click-expand-action)
+
 (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
 
 (setq vterm-shell "/usr/bin/zsh")
 
+;; for lsp refferences
 (defun my-lsp-list-references ()
   "List references using LSP."
   (interactive)
