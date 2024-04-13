@@ -132,6 +132,9 @@
 ;; hide bold etc. markers
 (setq org-hide-emphasis-markers t)
 
+;; add close time for todo
+(setq org-log-done 'time)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
