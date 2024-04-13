@@ -87,6 +87,10 @@
 ;; select all
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
+;; delete backwards without replacing the clipboard
+(global-set-key (kbd "C-<backspace>") 'evil-delete-backward-word)
+
+
 ;; windows
 (map! :leader "wv" #'+evil/window-vsplit-and-follow)
 (map! :n "gv" #'+evil/window-vsplit-and-follow)
@@ -115,6 +119,14 @@
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main")
   )
+
+;; turn on abbrev mode globally
+(load "~/.config/doom/my-abbrev.el")
+
+(after! company
+  ;; Unbind Tab key from Company mode for yas
+  (define-key company-active-map (kbd "TAB") nil)
+  (define-key company-active-map (kbd "<tab>") nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
