@@ -76,6 +76,16 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 
+(setq fancy-splash-image "~/.emacs-assets/splash.png")
+
+;; font
+(custom-set-faces!
+  '(doom-dashboard-footer :inherit font-lock-constant-face)
+  '(doom-dashboard-footer-icon :inherit nerd-icons-red)
+  '(doom-dashboard-loaded :inherit font-lock-warning-face)
+  '(doom-dashboard-menu-desc :inherit font-lock-string-face)
+  '(doom-dashboard-menu-title :inherit font-lock-function-name-face))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -121,7 +131,7 @@
   )
 
 ;; turn on abbrev mode globally
-(load "~/.config/doom/my-abbrev.el")
+(load "~/.emacs-assets/my-abbrev.el")
 
 (after! company
   ;; Unbind Tab key from Company mode for yas

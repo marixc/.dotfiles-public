@@ -11,6 +11,7 @@
 - [[#ui][UI]]
   - [[#font][Font]]
   - [[#theme][Theme]]
+  - [[#dashboard][Dashboard]]
 - [[#editor][Editor]]
   - [[#base][Base]]
   - [[#org][Org]]
@@ -112,6 +113,19 @@
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 #+end_src
 
+** Dashboard
+#+begin_src emacs-lisp
+(setq fancy-splash-image "~/.emacs-assets/splash.png")
+
+;; font
+(custom-set-faces!
+  '(doom-dashboard-footer :inherit font-lock-constant-face)
+  '(doom-dashboard-footer-icon :inherit nerd-icons-red)
+  '(doom-dashboard-loaded :inherit font-lock-warning-face)
+  '(doom-dashboard-menu-desc :inherit font-lock-string-face)
+  '(doom-dashboard-menu-title :inherit font-lock-function-name-face))
+#+end_src
+
 
 * Editor
 ** Base
@@ -176,7 +190,7 @@ in the main workspace.
 *** Abbreviations
 #+begin_src emacs-lisp
 ;; turn on abbrev mode globally
-(load "~/.config/doom/my-abbrev.el")
+(load "~/.emacs-assets/my-abbrev.el")
 #+end_src
 
 *** Snippets
