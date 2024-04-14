@@ -78,7 +78,10 @@
     (clear-abbrev-table python-mode-abbrev-table))
   (define-abbrev-table 'python-mode-abbrev-table
     '(("im" "import")
-      ("fr" "from"))
+      ("fr" "from")
+      ("fixm" "# FIXME:")
+      ("anot" "# NOTE:")
+      ("tod" "# TODO:"))
   )
 )
 
