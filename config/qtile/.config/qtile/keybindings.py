@@ -76,6 +76,12 @@ keys = [
     
 
     # My changes
+
+    Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
+
     Key([mod],
         "r",
         lazy.spawn(apps.get("myLauncher")),
