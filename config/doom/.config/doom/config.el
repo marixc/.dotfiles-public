@@ -207,3 +207,14 @@
 (map! :nv "SPC rr" #'my-lsp-list-references)
 
 (setq python-shell-interpreter "~/env/venv-emacs/bin/python")
+
+(defun my-python-setup ()
+  "Custom Python mode setup."
+  (define-key python-mode-map (kbd "<f11>") 'my-python-send-buffer))
+
+(defun my-python-send-buffer ()
+  "Send buffer to Python shell."
+  (interactive)
+  (python-shell-send-buffer))
+
+(add-hook 'python-mode-hook 'my-python-setup)
