@@ -76,7 +76,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-tokyo-night) ;; default 'doom-one
 
-(setq fancy-splash-image "~/.emacs-assets/splash.png")
+(setq fancy-splash-image "~/.emacs-assets/splash.svg")
 
 ;; font
 (custom-set-faces!
@@ -94,6 +94,17 @@
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
 
+
+(map! "<f1>" #'clipboard-kill-ring-save)
+(map! "<f2>" #'clipboard-yank)
+
+(defun clipboard-kill-ring-save-line ()
+  "Copy the current line to the clipboard."
+  (interactive)
+  (clipboard-kill-ring-save (point-at-bol) (1+ (point-at-eol)))
+  (message "Line copied to clipboard"))
+(map! "<f3>" #'clipboard-kill-ring-save-line) ;; F3 to copy line to clipboard
+
 ;; select all
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
@@ -102,7 +113,6 @@
 
 
 ;; windows
-(map! :leader "wv" #'+evil/window-vsplit-and-follow)
 (map! :n "gv" #'+evil/window-vsplit-and-follow)
 (map! :n "gs" #'+evil/window-split-and-follow)
 (map! :n "gh" #'evil-window-left)
@@ -113,6 +123,19 @@
 ;; buffers
 (map! :n "g[" #'previous-buffer)
 (map! :n "g]" #'next-buffer)
+(map! "<f9>" #'previous-buffer)
+(map! "<f10>" #'next-buffer)
+
+(map! "<f4>" #'kill-current-buffer)
+(map! "<f5>" #'evil-quit)
+(map! "<f6>" #'+evil/window-vsplit-and-follow)
+(map! "<f7>" #'evil-window-left)
+(map! "<f8>" #'evil-window-right)
+
+
+(map! "<f11>" #'org-agenda-list)
+(map! "<f12>" #'evil-write)
+
 
 ;;workspaces
 (map! :leader
