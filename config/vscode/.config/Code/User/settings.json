@@ -11,6 +11,8 @@
     "statusBar.background": "#0D0C0C", // Background color of the status bar at the bottom
     "panel.background": "#181616",
     "scrollbarSlider.background": "#1F1F28",
+    "tab.activeBackground": "#181616",
+    "tab.inactiveBackground": "#181616",
     "sideBar.border": "#1F1F28",
     "editorCursor.background": "#0D0C0C"
   },
@@ -161,8 +163,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.folding": false,
-  "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Tokyo Night",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
