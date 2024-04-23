@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp -r ~/Themes/day/.config/zathura/zathurarc ~/.config/zathura/.

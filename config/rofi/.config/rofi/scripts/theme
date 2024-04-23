@@ -1,0 +1,16 @@
+#!/bin/bash
+
+options=("Night" "Day")
+selected=$(printf '%s\n' "${options[@]}" | rofi -dmenu -l 4 -i -mesg "T H E M E S")
+
+case $selected in
+    "Night")
+     sh ~/.config/rofi/scripts/night
+        ;;
+    "Day")
+      sh ~/.config/rofi/scripts/day
+        ;;
+    *)
+        ;;
+esac
+
