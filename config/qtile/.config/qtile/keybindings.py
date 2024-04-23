@@ -13,6 +13,7 @@ apps = {
     "myDisplay": "sh -c ~/.config/rofi/scripts/display",
     "myWallpaper": "sh -c ~/.config/rofi/scripts/wallpaper",
     "myApps": "sh -c ~/.config/rofi/scripts/app",
+    "myTheme": "sh -c ~/.config/rofi/scripts/theme",
     "myTerminal": "kitty",
     "myScreenshot": "flameshot gui",
     "myNotes": "obsidian",
@@ -76,12 +77,6 @@ keys = [
     
 
     # My changes
-
-    Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
-
     Key([mod],
         "r",
         lazy.spawn(apps.get("myLauncher")),
@@ -96,6 +91,11 @@ keys = [
         "p",
         lazy.spawn(apps.get("myWallpaper")),
         desc="Launches Rofi Wallpaper"
+        ),
+    Key([mod, "control"],
+        "t",
+        lazy.spawn(apps.get("myTheme")),
+        desc="Launches Rofi Themes"
         ),
     Key([mod],
         "i",
