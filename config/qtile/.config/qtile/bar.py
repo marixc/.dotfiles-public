@@ -19,7 +19,7 @@ groups = [
 
 screens = [
     Screen(
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.GroupBox(
                     this_current_screen_border=color.get("highlight_block"),

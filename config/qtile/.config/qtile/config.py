@@ -83,14 +83,14 @@ layouts = [
         border_width_focus=2,
         border_focus=color.get("window_border_focus"),
         border_normal=color.get("window_border_normal"),
-        margin=3,
+        margin=0,
         border_on_single=False,
     ),
     layout.Max(
         border_width=0,
         border_focus=color.get("window_border_focus"),
         border_normal=color.get("window_border_normal"),
-        margin=3,
+        margin=0,
         border_on_single=False,
     ),
     layout.Floating(
