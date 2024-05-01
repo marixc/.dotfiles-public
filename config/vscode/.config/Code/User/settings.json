@@ -1,21 +1,4 @@
 {
-  "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#282727", // Change this color code to your desired color
-    "editorLineNumber.activeForeground": "#76946A", // Change this color code to your desired color
-    "editor.background": "#181616",
-    "titleBar.activeBackground": "#181616", // Background color of the active file menu
-    "editorGutter.background": "#181616",
-    "activityBar.background": "#181616", // Background color of the activity bar on the side
-    "sideBar.background": "#181616", // Background color of the side bar
-    "editorGroupHeader.tabsBackground": "#181616", // Background color of editor group tabs
-    "statusBar.background": "#0D0C0C", // Background color of the status bar at the bottom
-    "panel.background": "#181616",
-    "scrollbarSlider.background": "#1F1F28",
-    "tab.activeBackground": "#181616",
-    "tab.inactiveBackground": "#181616",
-    "sideBar.border": "#1F1F28",
-    "editorCursor.background": "#0D0C0C"
-  },
   "files.exclude": {
     "**/__pycache__": true,
     "**/.venv": true,
@@ -90,8 +73,8 @@
       "commands": ["workbench.action.focusRightGroup"]
     },
     {
-      "before": ["<leader>", "g"],
-      "commands": ["editor.action.commentLine"]
+      "before": ["<leader>", "g", "g"],
+      "commands": ["magit.status"]
     },
     {
       "before": ["<leader>", "c", "a"],
@@ -163,12 +146,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.folding": false,
-  "workbench.colorTheme": "Tokyo Night",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.activityBar.location": "top",
   "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
   "breadcrumbs.enabled": false,
-  "editor.lightbulb.enabled": "off"
+  "editor.lightbulb.enabled": "off",
+  // "workbench.editor.showTabs": "single",
+  "workbench.activityBar.location": "top",
+  "workbench.iconTheme": "vscode-icons"
+ 
 }
