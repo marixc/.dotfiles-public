@@ -31,7 +31,8 @@
     },
     {
       "before": ["leader", "r", "r"],
-      "commands": ["references-view.findReferences"]
+      "commands": ["editor.action.referenceSearch.trigger"]
+    
     },
 
     {
