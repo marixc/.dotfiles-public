@@ -83,13 +83,6 @@
     "when": "editorTextFocus && !editorReadonly && vim.active && !inDebugRepl"
   },
   {
-    "key": "ctrl+c",
-    "command": "editor.action.clipboardCopyAction",
-    "when": "editorTextFocus && !editorReadonly && vim.active && !inDebugRepl"
-  },
-
-
-  {
     "key": "g g",
     "command": "cursorTop",
     "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/" 
@@ -150,6 +143,42 @@
  {
    "key": "ctrl+u x",
    "command": "-magit.reset-hard"
- }
+},
+{
+  "key": "f11",
+  "command": "runCommands",
+  "args": {
+    "commands": [
+      "workbench.action.files.save",
+      "code-runner.run",
+    ]
+  }
+},
+{
+  "key": "f12",
+  "command": "workbench.action.files.save"
+},
+{
+  "key": "ctrl+s",
+  "command": "-workbench.action.files.save"
+},
+{
+  "key": "f1",
+  "command": "editor.action.clipboardCopyAction",
+  "when": "editorTextFocus && vim.active && !editorReadonly && !inDebugRepl"
+},
+{
+  "key": "ctrl+c",
+  "command": "editor.action.clipboardCopyAction",
+  "when": "editorTextFocus && vim.active && !editorReadonly && !inDebugRepl"
+},
+{
+  "key": "f2",
+  "command": "editor.action.clipboardPasteAction"
+},
+{
+  "key": "f4",
+  "command": "workbench.action.closeActiveEditor"
+},
 
 ]
