@@ -31,16 +31,16 @@ vim.g.mapleader = " "
 
 -- lang. setup
 vim.opt.spelllang = "en_us,de_de"
-vim.opt.spell = true
+vim.opt.spell = false
 
 vim.api.nvim_create_user_command("SpellEnable", function()
-	vim.opt.spell = true
+    vim.opt.spell = true
 end, {
-	desc = "SpellEnable",
+    desc = "SpellEnable",
 })
 
 vim.api.nvim_create_user_command("SpellDisable", function()
-	vim.opt.spell = false
+    vim.opt.spell = false
 end, {
-	desc = "SpellDisable",
+    desc = "SpellDisable",
 })
