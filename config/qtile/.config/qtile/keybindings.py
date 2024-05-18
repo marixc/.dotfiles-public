@@ -163,6 +163,18 @@ keys = [
         lazy.spawn(apps.get("myCalender")),
         desc="Launches Google calender",
     ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("pactl -- set-sink-volume 0 +5%"),
+        desc="+",
+    ),
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("pactl -- set-sink-volume 0 -5%"),
+        desc="-",
+    ),
     # Key([], "XF86AudioRaiseVolume", lazy.spwan("pactl -- set-sink-volume 0 +10%"), desc="Increase Vol."),
     # Key([], "XF86AudioRaiseVolume", lazy.spwan("pactl -- set-sink-volume 0 -10%"), desc="Decrease Vol."),
     # retile a floating window
