@@ -3,7 +3,7 @@
 redshift-gtk &
 picom &
 nm-applet &
-volumeicon &
+# volumeicon &
 dunst &
 pamac-tray &
 fcitx &
